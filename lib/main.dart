@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'slide_right_transition.dart';
 
 void main() => runApp(MyApp());
 
@@ -66,10 +67,8 @@ class _FiseHomePageState extends State<FiseHomePage> {
                             ),
                           ),
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => IncomeSurveyRoute()));
+                            Navigator.push(context,
+                                SlideRightRoute(widget: IncomeSurveyRoute()));
                           },
                         ),
                       ],
@@ -92,12 +91,13 @@ class IncomeSurveyRoute extends StatelessWidget {
       ),
       body: Center(
         child: RaisedButton(
-          child: Text('Next'),
+          child: const Text('Next'),
+          color: Theme.of(context).accentColor,
+          elevation: 4.0,
+          splashColor: Colors.lightGreen,
           onPressed: () {
             Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => HouseholdIncomeSurveyRoute()));
+                context, SlideRightRoute(widget: HouseholdIncomeSurveyRoute()));
           },
         ),
       ),
@@ -114,6 +114,9 @@ class HouseholdIncomeSurveyRoute extends StatelessWidget {
       ),
       body: Center(
         child: RaisedButton(
+          color: Theme.of(context).accentColor,
+          elevation: 4.0,
+          splashColor: Colors.lightGreen,
           onPressed: () {
             // Navigate back to first route when tapped.
           },
