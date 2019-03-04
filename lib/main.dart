@@ -1,19 +1,29 @@
 import 'package:flutter/material.dart';
-import 'slide_right_transition.dart';
+import 'survey_income.dart';
+import 'survey_household_income.dart';
+import 'thank_you.dart';
+import 'survey_save_income.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+  final List<int> surveyScoreCard = [];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Fise',
-      theme: ThemeData(
-        primarySwatch: Colors.lime,
-      ),
-      home: FiseHomePage(title: 'Fise Survey'),
-    );
+        title: 'Fise',
+        theme: ThemeData(
+          primarySwatch: Colors.deepOrange,
+        ),
+        home: FiseHomePage(title: 'Fise Survey'),
+        routes: <String, WidgetBuilder>{
+          '/income': (BuildContext context) => new Survey(),
+          '/household_income': (BuildContext context) => new SurveyHousehold(),
+          '/thank_you': (BuildContext context) => new ThankYouPage(),
+          '/savings': (BuildContext context) => new SurveySavings()
+        });
   }
 }
 
@@ -67,8 +77,7 @@ class _FiseHomePageState extends State<FiseHomePage> {
                             ),
                           ),
                           onPressed: () {
-                            Navigator.push(context,
-                                SlideRightRoute(widget: IncomeSurveyRoute()));
+                            Navigator.of(context).pushNamed('/income');
                           },
                         ),
                       ],
@@ -82,47 +91,3 @@ class _FiseHomePageState extends State<FiseHomePage> {
   }
 }
 
-class IncomeSurveyRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Income'),
-      ),
-      body: Center(
-        child: RaisedButton(
-          child: const Text('Next'),
-          color: Theme.of(context).accentColor,
-          elevation: 4.0,
-          splashColor: Colors.lightGreen,
-          onPressed: () {
-            Navigator.push(
-                context, SlideRightRoute(widget: HouseholdIncomeSurveyRoute()));
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class HouseholdIncomeSurveyRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Household Income"),
-      ),
-      body: Center(
-        child: RaisedButton(
-          color: Theme.of(context).accentColor,
-          elevation: 4.0,
-          splashColor: Colors.lightGreen,
-          onPressed: () {
-            // Navigate back to first route when tapped.
-          },
-          child: Text('Next'),
-        ),
-      ),
-    );
-  }
-}
