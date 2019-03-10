@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../main.dart';
+import '../utils/constants.dart';
 
 class IncomeSurvey extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class _IncomeSurveyState extends State<IncomeSurvey> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Income'),
+          title: Text(TITLES['income']),
           elevation: 4.0,
         ),
         body: Center(
