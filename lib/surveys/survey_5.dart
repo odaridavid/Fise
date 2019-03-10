@@ -80,40 +80,41 @@ class _SpendingState extends State<SpendingSurvey> {
                 onChanged: _value1Changed,
                 title: Text('Mobile Phone'),
                 controlAffinity: ListTileControlAffinity.leading,
-                activeColor: Colors.red,
+                activeColor: Colors.deepOrange,
               ),
               CheckboxListTile(
                 value: _value2,
                 onChanged: _value2Changed,
                 title: Text('Laptop/PC'),
                 controlAffinity: ListTileControlAffinity.leading,
-                activeColor: Colors.red,
+                activeColor: Colors.deepOrange,
               ),
+
               CheckboxListTile(
                 value: _value3,
                 onChanged: _value3Changed,
                 title: Text('Vaccation'),
                 controlAffinity: ListTileControlAffinity.leading,
-                activeColor: Colors.red,
+                activeColor: Colors.deepOrange,
               ),
               CheckboxListTile(
                 value: _value4,
                 onChanged: _value4Changed,
                 title: Text('Car'),
                 controlAffinity: ListTileControlAffinity.leading,
-                activeColor: Colors.red,
+                activeColor: Colors.deepOrange,
               ),
               CheckboxListTile(
                 value: _value5,
                 onChanged: _value5Changed,
                 title: Text('None'),
                 controlAffinity: ListTileControlAffinity.leading,
-                activeColor: Colors.red,
+                activeColor: Colors.deepOrange,
               ),
               RaisedButton(
                 color: Theme.of(context).accentColor,
                 elevation: 4.0,
-                splashColor: Colors.lightGreen,
+                splashColor: Colors.white,
                 onPressed: () {
                   Navigator.of(context).pushNamed('/thank_you');
                 },

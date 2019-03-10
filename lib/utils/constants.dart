@@ -1,3 +1,4 @@
+//Titles for each route
 const Map<String, String> TITLES = {
   'household': 'Household',
   'spending': 'Spending',

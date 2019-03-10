@@ -9,7 +9,7 @@ class SavingsSurvey extends StatefulWidget {
 
 class _SavingSurveyState extends State<SavingsSurvey> {
   // state variable
-  int _radiovalue = -1;
+  int _radiovalue = 0;
 
   void _handleRadioValueChange(int value) {
     setState(() {
@@ -94,7 +94,7 @@ class _SavingSurveyState extends State<SavingsSurvey> {
                         child: RaisedButton(
                           color: Theme.of(context).accentColor,
                           elevation: 4.0,
-                          splashColor: Colors.lightGreen,
+                          splashColor: Colors.white,
                           onPressed: () {
                             Navigator.of(context)
                                 .pushNamed('/finance_knowledge');
