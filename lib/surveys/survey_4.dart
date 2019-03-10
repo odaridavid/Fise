@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'survey_household_income.dart';
-import 'main.dart';
+import '../main.dart';
 
-class Survey extends StatefulWidget {
+class FinanceKnowledgeSurvey extends StatefulWidget {
   @override
-  _SurveyState createState() => _SurveyState();
+  _FinanceKnowledgeState createState() => _FinanceKnowledgeState();
 }
 
-class _SurveyState extends State<Survey> {
+class _FinanceKnowledgeState extends State<FinanceKnowledgeSurvey> {
   // state variable
   int _radiovalue = -1;
 
@@ -30,7 +29,7 @@ class _SurveyState extends State<Survey> {
                     style: new TextStyle(
                         fontSize: 20.0, fontWeight: FontWeight.bold)),
                 new Text(
-                  'Your Income Bracket is between :',
+                  'On a scale from A to E, what grade would you give yourself in terms of your knowledge about personal finances?',
                   style: new TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 18.0,
@@ -42,7 +41,7 @@ class _SurveyState extends State<Survey> {
                   onChanged: _handleRadioValueChange,
                 ),
                 new Text(
-                  '0 - 30,000',
+                  'A',
                   style: new TextStyle(fontSize: 16.0),
                 ),
                 new Radio(
@@ -51,7 +50,7 @@ class _SurveyState extends State<Survey> {
                   onChanged: _handleRadioValueChange,
                 ),
                 new Text(
-                  '30,001 - 80,000',
+                  'B',
                   style: new TextStyle(fontSize: 16.0),
                 ),
                 new Radio(
@@ -60,7 +59,7 @@ class _SurveyState extends State<Survey> {
                   onChanged: _handleRadioValueChange,
                 ),
                 new Text(
-                  '80,001 - 150,000',
+                  'C',
                   style: new TextStyle(fontSize: 16.0),
                 ),
                 new Radio(
@@ -69,16 +68,16 @@ class _SurveyState extends State<Survey> {
                   onChanged: _handleRadioValueChange,
                 ),
                 new Text(
-                  '150,001 - 300,000',
+                  'D',
                   style: new TextStyle(fontSize: 16.0),
                 ),
                 new Radio(
-                  value: 4,
+                  value: 3,
                   groupValue: _radiovalue,
                   onChanged: _handleRadioValueChange,
                 ),
                 new Text(
-                  '300,001 and above',
+                  'E',
                   style: new TextStyle(fontSize: 16.0),
                 ),
                 RaisedButton(
@@ -86,7 +85,7 @@ class _SurveyState extends State<Survey> {
                   elevation: 4.0,
                   splashColor: Colors.lightGreen,
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/household_income');
+                    Navigator.of(context).pushNamed('/thank_you');
                   },
                   child: Text('Next'),
                 )

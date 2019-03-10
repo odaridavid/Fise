@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
+import '../main.dart';
 
-class SurveySavings extends StatefulWidget {
+class IncomeSurvey extends StatefulWidget {
   @override
-  _SurveySavingState createState() => _SurveySavingState();
+  _IncomeSurveyState createState() => _IncomeSurveyState();
 }
 
-class _SurveySavingState extends State<SurveySavings> {
+class _IncomeSurveyState extends State<IncomeSurvey> {
   // state variable
   int _radiovalue = -1;
 
@@ -29,7 +29,7 @@ class _SurveySavingState extends State<SurveySavings> {
                     style: new TextStyle(
                         fontSize: 20.0, fontWeight: FontWeight.bold)),
                 new Text(
-                  'Your Monthly Savings is:',
+                  'Your Income Bracket is between :',
                   style: new TextStyle(
                     fontWeight: FontWeight.normal,
                     fontSize: 18.0,
@@ -41,7 +41,7 @@ class _SurveySavingState extends State<SurveySavings> {
                   onChanged: _handleRadioValueChange,
                 ),
                 new Text(
-                  'Below 30,000',
+                  '0 - 30,000',
                   style: new TextStyle(fontSize: 16.0),
                 ),
                 new Radio(
@@ -50,7 +50,7 @@ class _SurveySavingState extends State<SurveySavings> {
                   onChanged: _handleRadioValueChange,
                 ),
                 new Text(
-                  'Above 30,001',
+                  '30,001 - 80,000',
                   style: new TextStyle(fontSize: 16.0),
                 ),
                 new Radio(
@@ -59,7 +59,7 @@ class _SurveySavingState extends State<SurveySavings> {
                   onChanged: _handleRadioValueChange,
                 ),
                 new Text(
-                  'Above 80,000',
+                  '80,001 - 150,000',
                   style: new TextStyle(fontSize: 16.0),
                 ),
                 new Radio(
@@ -68,11 +68,11 @@ class _SurveySavingState extends State<SurveySavings> {
                   onChanged: _handleRadioValueChange,
                 ),
                 new Text(
-                  'Above 150,000',
+                  '150,001 - 300,000',
                   style: new TextStyle(fontSize: 16.0),
                 ),
                 new Radio(
-                  value: 3,
+                  value: 4,
                   groupValue: _radiovalue,
                   onChanged: _handleRadioValueChange,
                 ),
@@ -85,7 +85,7 @@ class _SurveySavingState extends State<SurveySavings> {
                   elevation: 4.0,
                   splashColor: Colors.lightGreen,
                   onPressed: () {
-                    Navigator.of(context).pushNamed('/thank_you');
+                    Navigator.of(context).pushNamed('/household_income');
                   },
                   child: Text('Next'),
                 )

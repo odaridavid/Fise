@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'survey_income.dart';
-import 'survey_household_income.dart';
+import 'package:fise/surveys/survey_1.dart';
+import 'package:fise/surveys/survey_2.dart';
+import 'package:fise/surveys/survey_3.dart';
+import 'package:fise/surveys/survey_4.dart';
 import 'thank_you.dart';
-import 'survey_save_income.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,10 +20,12 @@ class MyApp extends StatelessWidget {
         ),
         home: FiseHomePage(title: 'Fise Survey'),
         routes: <String, WidgetBuilder>{
-          '/income': (BuildContext context) => new Survey(),
-          '/household_income': (BuildContext context) => new SurveyHousehold(),
+          '/income': (BuildContext context) => new IncomeSurvey(),
+          '/household_income': (BuildContext context) => new HouseholdSurvey(),
+          '/savings': (BuildContext context) => new SavingsSurvey(),
+          '/finance_knowledge': (BuildContext context) =>
+              new FinanceKnowledgeSurvey(),
           '/thank_you': (BuildContext context) => new ThankYouPage(),
-          '/savings': (BuildContext context) => new SurveySavings()
         });
   }
 }
@@ -90,4 +93,3 @@ class _FiseHomePageState extends State<FiseHomePage> {
         ));
   }
 }
-
