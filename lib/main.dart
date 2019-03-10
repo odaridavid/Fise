@@ -3,6 +3,7 @@ import 'package:fise/surveys/survey_1.dart';
 import 'package:fise/surveys/survey_2.dart';
 import 'package:fise/surveys/survey_3.dart';
 import 'package:fise/surveys/survey_4.dart';
+import 'package:fise/surveys/survey_5.dart';
 import 'thank_you.dart';
 
 void main() => runApp(MyApp());
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
           '/income': (BuildContext context) => new IncomeSurvey(),
           '/household_income': (BuildContext context) => new HouseholdSurvey(),
           '/savings': (BuildContext context) => new SavingsSurvey(),
+          '/spending':(BuildContext context) => new SpendingSurvey(),
           '/finance_knowledge': (BuildContext context) =>
               new FinanceKnowledgeSurvey(),
           '/thank_you': (BuildContext context) => new ThankYouPage(),
