@@ -4,6 +4,7 @@ import 'package:fise/surveys/survey_2.dart';
 import 'package:fise/surveys/survey_3.dart';
 import 'package:fise/surveys/survey_4.dart';
 import 'package:fise/surveys/survey_5.dart';
+import 'slide_right_transition.dart';
 import 'thank_you.dart';
 
 void main() => runApp(MyApp());
@@ -14,20 +15,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Fise',
-        theme: ThemeData(
-          primarySwatch: Colors.deepOrange,
-        ),
-        home: FiseHomePage(title: 'Fise Survey'),
-        routes: <String, WidgetBuilder>{
-          '/income': (BuildContext context) => new IncomeSurvey(),
-          '/household_income': (BuildContext context) => new HouseholdSurvey(),
-          '/savings': (BuildContext context) => new SavingsSurvey(),
-          '/spending':(BuildContext context) => new SpendingSurvey(),
-          '/finance_knowledge': (BuildContext context) =>
-              new FinanceKnowledgeSurvey(),
-          '/thank_you': (BuildContext context) => new ThankYouPage(),
-        });
+      title: 'Fise',
+      theme: ThemeData(
+        primarySwatch: Colors.deepOrange,
+      ),
+      home: FiseHomePage(title: 'Fise Survey'),
+      onGenerateRoute: (RouteSettings settings) {
+//        Routing with animation transition
+        switch (settings.name) {
+          case '/income':
+            return SlideRightRoute(widget: IncomeSurvey());
+            break;
+          case '/household_income':
+            return SlideRightRoute(widget: HouseholdSurvey());
+            break;
+          case '/savings':
+            return SlideRightRoute(widget: SavingsSurvey());
+            break;
+          case '/spending':
+            return SlideRightRoute(widget: SpendingSurvey());
+            break;
+          case '/finance_knowledge':
+            return SlideRightRoute(widget: FinanceKnowledgeSurvey());
+            break;
+          case '/thank_you':
+            return SlideRightRoute(widget: ThankYouPage());
+            break;
+        }
+      },
+    );
   }
 }
 
