@@ -18,9 +18,10 @@ class _SavingSurveyState extends State<SavingsSurvey> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Saving'),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Saving'),
+          elevation: 4.0,
         ),
         body: Center(
           child: Card(
@@ -28,73 +29,74 @@ class _SavingSurveyState extends State<SavingsSurvey> {
               child: Padding(
                   padding: EdgeInsets.all(30.0),
                   child: Column(children: <Widget>[
-                    new Text('Select one of the following:',
-                        style: new TextStyle(
+                    Text('Select one of the following:',
+                        style: TextStyle(
                             fontSize: 20.0, fontWeight: FontWeight.bold)),
-                    new Text(
-                      'Your Monthly Savings is:',
-                      style: new TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: 18.0,
-                      ),
-                    ),
-                    new Radio(
+                    Center(
+                        child: Padding(
+                            padding: EdgeInsets.all(20.0),
+                            child: Text(
+                              'Your Monthly Savings is:',
+                              style: TextStyle(
+                                fontWeight: FontWeight.normal,
+                                fontSize: 18.0,
+                              ),
+                              textAlign: TextAlign.center,
+                            ))),
+                    Radio(
                       value: 0,
                       groupValue: _radiovalue,
                       onChanged: _handleRadioValueChange,
                     ),
-                    new Text(
+                    Text(
                       'Below 30,000',
-                      style: new TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 16.0),
                     ),
-                    new Radio(
+                    Radio(
                       value: 1,
                       groupValue: _radiovalue,
                       onChanged: _handleRadioValueChange,
                     ),
-                    new Text(
+                    Text(
                       'Above 30,001',
-                      style: new TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 16.0),
                     ),
-                    new Radio(
+                    Radio(
                       value: 2,
                       groupValue: _radiovalue,
                       onChanged: _handleRadioValueChange,
                     ),
-                    new Text(
+                    Text(
                       'Above 80,000',
-                      style: new TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 16.0),
                     ),
-                    new Radio(
+                    Radio(
                       value: 3,
                       groupValue: _radiovalue,
                       onChanged: _handleRadioValueChange,
                     ),
-                    new Text(
+                    Text(
                       'Above 150,000',
-                      style: new TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 16.0),
                     ),
-                    new Radio(
+                    Radio(
                       value: 3,
                       groupValue: _radiovalue,
                       onChanged: _handleRadioValueChange,
                     ),
-                    new Text(
+                    Text(
                       '300,001 and above',
-                      style: new TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 16.0),
                     ),
                     Padding(
-                        padding:EdgeInsets.all(20.0),
-                        child:
-                        RaisedButton(
-                          color: Theme
-                              .of(context)
-                              .accentColor,
+                        padding: EdgeInsets.all(20.0),
+                        child: RaisedButton(
+                          color: Theme.of(context).accentColor,
                           elevation: 4.0,
                           splashColor: Colors.lightGreen,
                           onPressed: () {
-                            Navigator.of(context).pushNamed(
-                                '/finance_knowledge');
+                            Navigator.of(context)
+                                .pushNamed('/finance_knowledge');
                           },
                           child: Text('Next'),
                         ))

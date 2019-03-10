@@ -18,9 +18,10 @@ class _HouseholdSurveyState extends State<HouseholdSurvey> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
-          title: new Text('Household'),
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Household'),
+          elevation: 4.0,
         ),
         body: Center(
           child: Card(
@@ -28,64 +29,66 @@ class _HouseholdSurveyState extends State<HouseholdSurvey> {
               child: Padding(
                   padding: EdgeInsets.all(30.0),
                   child: Column(children: <Widget>[
-                    new Text('Select one of the following:',
-                        style: new TextStyle(
+                    Text('Select one of the following:',
+                        style: TextStyle(
                           fontSize: 20.0,
                           fontWeight: FontWeight.bold,
                         )),
-                    new Container(
-                        child: new Text(
-                      'Your Household Income Bracket is between :',
-                      style: new TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: 18.0,
-                      ),
-                      textAlign: TextAlign.center,
-                    )),
-                    new Radio(
+                    Container(
+                        child: Padding(
+                            padding: EdgeInsets.all(20.0),
+                            child: Text(
+                              'Your Household Income Bracket is between :',
+                              style: TextStyle(
+                                fontWeight: FontWeight.normal,
+                                fontSize: 18.0,
+                              ),
+                              textAlign: TextAlign.center,
+                            ))),
+                    Radio(
                       value: 0,
                       groupValue: _radiovalue,
                       onChanged: _handleRadioValueChange,
                     ),
-                    new Text(
+                    Text(
                       '0 - 30,000',
-                      style: new TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 16.0),
                     ),
-                    new Radio(
+                    Radio(
                       value: 1,
                       groupValue: _radiovalue,
                       onChanged: _handleRadioValueChange,
                     ),
-                    new Text(
+                    Text(
                       '30,001 - 80,000',
-                      style: new TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 16.0),
                     ),
-                    new Radio(
+                    Radio(
                       value: 2,
                       groupValue: _radiovalue,
                       onChanged: _handleRadioValueChange,
                     ),
-                    new Text(
+                    Text(
                       '80,001 - 150,000',
-                      style: new TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 16.0),
                     ),
-                    new Radio(
+                    Radio(
                       value: 3,
                       groupValue: _radiovalue,
                       onChanged: _handleRadioValueChange,
                     ),
-                    new Text(
+                    Text(
                       '150,001 - 300,000',
-                      style: new TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 16.0),
                     ),
-                    new Radio(
+                    Radio(
                       value: 3,
                       groupValue: _radiovalue,
                       onChanged: _handleRadioValueChange,
                     ),
-                    new Text(
+                    Text(
                       '300,001 and above',
-                      style: new TextStyle(fontSize: 16.0),
+                      style: TextStyle(fontSize: 16.0),
                     ),
                     Padding(
                         padding: EdgeInsets.all(20.0),
