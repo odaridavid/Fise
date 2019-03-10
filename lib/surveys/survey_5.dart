@@ -116,7 +116,7 @@ class _SpendingState extends State<SpendingSurvey> {
                 elevation: 4.0,
                 splashColor: Colors.white,
                 onPressed: () {
-                  Navigator.of(context).pushNamed('/thank_you');
+                  Navigator.of(context).pushNamed('/occupation');
                 },
                 child: Text('Next'),
               )

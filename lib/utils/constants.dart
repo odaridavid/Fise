@@ -4,5 +4,6 @@ const Map<String, String> TITLES = {
   'spending': 'Spending',
   'income': 'Income',
   'saving': 'Saving',
+  'occupation': 'Occupation',
   'fin_knowledge': 'Financial Knowledge',
 };

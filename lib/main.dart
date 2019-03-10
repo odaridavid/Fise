@@ -4,6 +4,7 @@ import 'package:fise/surveys/survey_2.dart';
 import 'package:fise/surveys/survey_3.dart';
 import 'package:fise/surveys/survey_4.dart';
 import 'package:fise/surveys/survey_5.dart';
+import 'package:fise/surveys/survey_6.dart';
 import 'slide_right_transition.dart';
 import 'thank_you.dart';
 
@@ -37,6 +38,9 @@ class MyApp extends StatelessWidget {
             break;
           case '/finance_knowledge':
             return SlideRightRoute(widget: FinanceKnowledgeSurvey());
+            break;
+          case '/occupation':
+            return SlideRightRoute(widget: OccupationSurvey());
             break;
           case '/thank_you':
             return SlideRightRoute(widget: ThankYouPage());
