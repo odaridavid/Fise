@@ -55,29 +55,32 @@ class _OccupationSurveyState extends State<OccupationSurvey> {
                         ),
                         textAlign: TextAlign.center,
                       ))),
-              TextField(
-                controller: textEditController,
-                decoration: new InputDecoration(
-                    hintText: "e.g Butcher",
-                    errorText:
-                        _isNotValid ? "Check Input before submitting" : null,
-                    errorStyle: TextStyle(
-                        decorationColor: Colors.deepOrange,
-                        letterSpacing: 2.0)),
-                onChanged: (inputText) {
-                  setState(() {
+              Container(
+                  margin: EdgeInsets.all(15.0),
+                  child: TextField(
+                    controller: textEditController,
+                    decoration: new InputDecoration(
+                        hintText: "e.g Butcher",
+                        errorText: _isNotValid
+                            ? "Check Input before submitting"
+                            : null,
+                        errorStyle: TextStyle(
+                            decorationColor: Colors.deepOrange,
+                            letterSpacing: 2.0)),
+                    onChanged: (inputText) {
+                      setState(() {
 //                   Check Input Validation
-                    if (inputText.contains(
-                            new RegExp(r'[A-Z]', caseSensitive: false)) &&
-                        inputText.length > 3) {
-                      _isNotValid = false;
-                    } else {
-                      _isNotValid = true;
-                    }
-                  });
-                },
-                //onChanged is called whenever we add or delete something on Text Field
-              ),
+                        if (inputText.contains(
+                                new RegExp(r'[A-Z]', caseSensitive: false)) &&
+                            inputText.length > 3) {
+                          _isNotValid = false;
+                        } else {
+                          _isNotValid = true;
+                        }
+                      });
+                    },
+                    //onChanged is called whenever we add or delete something on Text Field
+                  )),
               Padding(
                   padding: EdgeInsets.all(20.0),
                   child: RaisedButton(
